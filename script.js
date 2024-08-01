@@ -9,12 +9,12 @@ checkboxes.forEach(checkbox => {
 
 function countCheckboxes() {
   let checkedCount = 0;
-  let percent = 100;
+  let percent = 0;
 
   checkboxes.forEach(checkbox => {
     if (checkbox.checked) {
       checkedCount++;
-      percent = 100 - (checkedCount / checkboxes.length) * 100;
+      percent = (checkedCount / checkboxes.length) * 100;
       message(percent); 
     }
   });
@@ -25,16 +25,16 @@ function countCheckboxes() {
 
 function message(percentage) {
   let message;
-  if (percentage === 100) {
-    message = "Hats of to you, not even God is as pure as that, maybe check to see is you missed anything";
-  } else if (percentage >= 90) {
-    message = "You make a priest jelous, you're way too pure loosen up a bit";
-  } else if (percentage >= 70) {
-    message = "You don't seem to like getting dirty, but at least you're not one of those pure monks.";
-  } else if (percentage >= 40) {
-    message = "You certainly don't hold back on your dark intentions, but don't get too excited";
-  } else {
-    message = "I'm a bit concerened. Maybe use protection to avoid accidents. Make sure you haven't accidently clicked something by accident.";
+  if (percentage >= 95) {
+    message = "Damn Slut";
+  }else if(percentage>=85){
+    message = "Thats extreme, are you sure you didn't click any on accident";
+  }else if(percentage >= 50){
+    message = "Damn you do like getting dirty."
+  }else if(percentage >= 25){
+    message = "You've been getting a little adventurous"
+  }else{
+    message = "You're a pure soul, you make a preist jelous."
   }
   messageSpan.textContent = message; // Set the message text
 }
